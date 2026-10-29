@@ -79,7 +79,7 @@ const copy = {
 const stage = document.createElement("section");
 stage.className = "cinema";
 stage.setAttribute("aria-label", "JISR");
-stage.innerHTML = `<div class="cinema-pin"><div class="cinema-media"><div class="cinema-photo"><img src="assets/portal/jisr-dawn.png" alt="" width="1562" height="1007" fetchpriority="high"></div></div><div class="cinema-copy"><div class="cinema-title"><p data-copy="badge"></p><h1><span data-copy="line1"></span><span data-copy="line2"></span></h1></div><div class="cinema-actions"><a class="cinema-button light" href="#experience" data-copy="explore"></a><button type="button" class="cinema-button outline" disabled data-copy="download"></button></div><p class="cinema-lead" data-copy="lead"></p><div class="cinema-scroll" aria-hidden="true">↓</div></div><div class="cinema-over" aria-hidden="true"><div class="portal-plane"><div class="portal-fill"></div><div class="portal-rim"></div></div><div class="portal-light"><img src="assets/jisr-icon.png" alt=""><span>JISR</span><small lang="ar">جسر</small></div></div><section class="cinema-ready" aria-hidden="true" inert><div class="ready-wordmark" aria-hidden="true">JISR</div><h2><span data-copy="first"></span><span data-copy="second"></span></h2><div class="ready-phone"><div class="ready-arrival"><div class="ready-float"><img src="assets/screens/home-ar.png" alt="" width="393" height="852"></div></div></div><p class="ready-lead" data-copy="ready"></p><button type="button" class="cinema-button ink" disabled data-copy="download"></button><a class="ready-more" href="#experience" data-copy="more"></a></section></div>`;
+stage.innerHTML = `<div class="cinema-pin"><div class="cinema-media"><div class="cinema-photo"><img src="assets/portal/jisr-connection.png" alt="" width="1536" height="1024" fetchpriority="high"></div></div><div class="cinema-copy"><div class="cinema-title"><p data-copy="badge"></p><h1><span data-copy="line1"></span><span data-copy="line2"></span></h1></div><div class="cinema-actions"><a class="cinema-button light" href="#experience" data-copy="explore"></a><button type="button" class="cinema-button outline" disabled data-copy="download"></button></div><p class="cinema-lead" data-copy="lead"></p><div class="cinema-scroll" aria-hidden="true">↓</div></div><div class="cinema-over" aria-hidden="true"><div class="portal-plane"><div class="portal-fill"></div><div class="portal-rim"></div></div><div class="portal-light"><img src="assets/jisr-icon.png" alt=""><span>JISR</span><small lang="ar">جسر</small></div></div><section class="cinema-ready" aria-hidden="true" inert><div class="ready-wordmark" aria-hidden="true">JISR</div><h2><span data-copy="first"></span><span data-copy="second"></span></h2><div class="ready-phone"><div class="ready-arrival"><div class="ready-float"><img src="assets/screens/home-ar.png" alt="" width="393" height="852"></div></div></div><p class="ready-lead" data-copy="ready"></p><button type="button" class="cinema-button ink" disabled data-copy="download"></button><a class="ready-more" href="#experience" data-copy="more"></a></section></div>`;
 const oldHero = document.querySelector<HTMLElement>(".hero")!;
 oldHero.before(stage);
 oldHero.hidden = true;
@@ -155,13 +155,13 @@ function render(progress: number) {
     bx = photo.offsetLeft,
     by = photo.offsetTop;
   const base: Quad = [
-    { x: 662, y: 360 },
-    { x: 901, y: 381 },
-    { x: 901, y: 765 },
-    { x: 663, y: 783 },
+    { x: 636, y: 447 },
+    { x: 1064, y: 484 },
+    { x: 975, y: 819 },
+    { x: 476, y: 733 },
   ].map((q) => ({
-    x: bx + (q.x / 1562) * bw,
-    y: by + (q.y / 1007) * bh,
+    x: bx + (q.x / 1536) * bw,
+    y: by + (q.y / 1024) * bh,
   })) as Quad;
   const center = {
     x: base.reduce((a, q) => a + q.x, 0) / 4,
@@ -192,7 +192,7 @@ function render(progress: number) {
   );
   portal.style.transform = matrix;
   light.style.transform = quadToMatrix3d(CARD_WIDTH, CARD_HEIGHT, original);
-  light.style.opacity = String(1 - seg(p, 0.15, 0.4));
+  light.style.opacity = "0";
   portal.style.opacity = reduced() ? "0" : "1";
   portal.querySelector<HTMLElement>(".portal-rim")!.style.opacity = String(
     seg(p, 0.1, 0.4),
@@ -384,7 +384,7 @@ const resize = () => render(p);
 addEventListener("resize", resize);
 let objectUrl: string | undefined;
 async function loadScene() {
-  const response = await fetch("assets/portal/jisr-dawn.png", {
+  const response = await fetch("assets/portal/jisr-connection.png", {
     signal: AbortSignal.timeout(12000),
   });
   if (!response.ok) throw Error("Scene unavailable");

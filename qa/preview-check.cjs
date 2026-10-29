@@ -13,10 +13,10 @@ const base=process.env.JISR_SITE_URL || 'http://127.0.0.1:4175';
  page.on('pageerror',e=>errors.push(e.message));page.on('download',d=>downloads.push(d.suggestedFilename()));
  page.on('request',r=>{if(/\.apk(?:\?|$)/i.test(r.url()))installerRequests.push(r.url());});
  await page.goto(base);await page.waitForSelector('.cinema-loader',{state:'detached',timeout:20000});
- assert.equal(await page.locator('.cinema-photo img').evaluate(i=>i.naturalWidth),1562);
- const image=await page.request.get(base+'/assets/portal/jisr-dawn.png');assert.equal(image.status(),200);
+ assert.equal(await page.locator('.cinema-photo img').evaluate(i=>i.naturalWidth),1536);
+ const image=await page.request.get(base+'/assets/portal/jisr-connection.png');assert.equal(image.status(),200);
  const hash=data=>crypto.createHash('sha256').update(data).digest('hex');
- assert.equal(hash(await image.body()),hash(fs.readFileSync(path.join(__dirname,'../assets/portal/jisr-dawn.png'))));
+ assert.equal(hash(await image.body()),hash(fs.readFileSync(path.join(__dirname,'../assets/portal/jisr-connection.png'))));
  await page.mouse.move(10,300);await page.screenshot({path:path.join(__dirname,'customer-preview-desktop.png')});
  await page.emulateMedia({reducedMotion:'reduce'});
  for(const lang of ['ar','fr','en']){

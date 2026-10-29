@@ -11,3 +11,6 @@ The existing static product page and all Android/backend resources were retained
 ## Approved client-preview revision
 
 The user approved the generated blue/sage/ivory/lavender adaptation on 29 October 2026. It is saved as `assets/portal/jisr-dawn.png` and is the active hero scene. The original desert reference remains as historical source material. All app download controls are disabled and installer files are excluded from this repository and production build.
+
+
+The user replaced the hero on 29 October 2026 with their supplied communication/tablet illustration, stored byte-for-byte as `assets/portal/jisr-connection.png`. The camera transition originates at the tablet screen; the former floating logo overlay is hidden to preserve the supplied artwork. Earlier backgrounds remain historical assets.
