@@ -155,10 +155,10 @@ function render(progress: number) {
     bx = photo.offsetLeft,
     by = photo.offsetTop;
   const base: Quad = [
-    { x: 636, y: 447 },
-    { x: 1064, y: 484 },
-    { x: 975, y: 819 },
-    { x: 476, y: 733 },
+    { x: 651, y: 366 },
+    { x: 886, y: 387 },
+    { x: 886, y: 778 },
+    { x: 652, y: 796 },
   ].map((q) => ({
     x: bx + (q.x / 1536) * bw,
     y: by + (q.y / 1024) * bh,
@@ -192,7 +192,7 @@ function render(progress: number) {
   );
   portal.style.transform = matrix;
   light.style.transform = quadToMatrix3d(CARD_WIDTH, CARD_HEIGHT, original);
-  light.style.opacity = "0";
+  light.style.opacity = String(1 - seg(p, 0.15, 0.4));
   portal.style.opacity = reduced() ? "0" : "1";
   portal.querySelector<HTMLElement>(".portal-rim")!.style.opacity = String(
     seg(p, 0.1, 0.4),
