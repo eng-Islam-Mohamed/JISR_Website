@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" />
+    <meta
+      name="description"
+      content="جسر: مساحة للتواصل بالصور والكلمات والصوت. اكتشف تطبيق JISR وحمّل نسخة Android التجريبية."
+    />
+    <title>JISR · لكل تعبير، جسر</title>
+    <link rel="icon" type="image/png" href="assets/jisr-icon.png" />
+    <link
+      rel="preload"
+      href="assets/fonts/IBMPlexSansArabic-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="glass.css" />
+    <link rel="stylesheet" href="cinematic.css" />
+    <script src="app.js" defer></script>
+    <script src="cinematic.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="skip">انتقل إلى المحتوى</a>
+    <svg
+      class="icon-definitions"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <filter
+          id="liquid-refraction"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          color-interpolation-filters="sRGB"
+        >
+          <feImage
+            href="assets/glass-displacement.png"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="none"
+            result="edge-map"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="edge-map"
+            scale="22"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M19 12H5m6-6-6 6 6 6" />
+        </symbol>
+        <symbol id="i-download" viewBox="0 0 24 24">
+          <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+        </symbol>
+        <symbol id="i-sound" viewBox="0 0 24 24">
+          <path
+            d="m11 4-6 5H2v6h3l6 5V4Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"
+          />
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+          <path
+            d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+          />
+        </symbol>
+        <symbol id="i-water" viewBox="0 0 24 24">
+          <path d="M12 2S4 10 4 15a8 8 0 0 0 16 0c0-5-8-13-8-13Z" />
+          <path d="M8 15a4 4 0 0 0 4 4" />
+        </symbol>
+        <symbol id="i-smile" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M8 14s1 3 4 3 4-3 4-3M8 8h.01M16 8h.01" />
+        </symbol>
+        <symbol id="i-food" viewBox="0 0 24 24">
+          <path
+            d="M3 12h18a9 9 0 0 1-18 0ZM6 22h12M8 8c-4-3 4-3 0-6m8 6c-4-3 4-3 0-6"
+          />
+        </symbol>
+        <symbol id="i-people" viewBox="0 0 24 24">
+          <circle cx="9" cy="7" r="4" />
+          <path
+            d="M1 21v-3a8 8 0 0 1 16 0v3M17 3a4 4 0 0 1 0 8m3 10v-3a8 8 0 0 0-2-5"
+          />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14" />
+        </symbol>
+        <symbol id="i-motion" viewBox="0 0 24 24">
+          <path d="M4 8h4m-6 4h6m-4 4h4" />
+          <circle cx="16" cy="12" r="6" />
+        </symbol>
+        <symbol id="i-android" viewBox="0 0 24 24">
+          <path
+            d="m7 4-2-3m12 3 2-3M3 12a9 9 0 0 1 18 0v6H3v-6Zm4 6v4m10-4v4M1 11v6m22-6v6M8 8h.01M16 8h.01"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="header wrap">
+      <a class="brand" href="#" aria-label="JISR"
+        ><img src="assets/jisr-icon.png" width="46" height="46" alt="" /><span
+          >JISR<span class="brand-ar" lang="ar">جسر</span></span
+        ></a
+      >
+      <nav
+        class="main-nav glass"
+        aria-label="التنقل الرئيسي"
+        data-i18n-aria="navLabel"
+      >
+        <span class="nav-lens" aria-hidden="true"></span>
+        <a href="#experience" data-i18n="navExperience">الفكرة</a>
+        <a href="#inside" data-i18n="navInside">داخل جسر</a>
+        <a href="#questions" data-i18n="navQuestions">أسئلتك</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-picker">
+          <button
+            class="language-toggle"
+            aria-expanded="false"
+            aria-controls="languages"
+            aria-label="اختر اللغة"
+            data-i18n-aria="languageLabel"
+          >
+            <span id="language-current">AR</span
+            ><span aria-hidden="true">⌄</span>
+          </button>
+          <div class="language-menu glass" id="languages" hidden>
+            <button lang="ar" data-lang="ar" aria-pressed="true">العربية</button
+            ><button lang="fr" data-lang="fr" aria-pressed="false">
+              Français</button
+            ><button lang="en" data-lang="en" aria-pressed="false">
+              English
+            </button>
+          </div>
+        </div>
+        <button type="button" disabled class="nav-download"
+          ><span data-i18n="navDownload">قريبًا</span
+          ><svg class="icon"><use href="#i-download" /></svg
+        ></button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="tiny-line"></span
+            ><span data-i18n="heroEyebrow">مساحة صغيرة. تعبير بلا حدود.</span>
+          </p>
+          <h1 id="hero-title">
+            <span data-i18n="heroLine1">لكل تعبير،</span><br /><span
+              class="serif-word"
+              data-i18n="heroLine2"
+              >جسر.</span
+            ><span class="title-mark" aria-hidden="true">↗</span>
+          </h1>
+          <p class="hero-description" data-i18n="heroDescription">
+            بعض الكلمات تبدأ بصورة. جسر يساعدك على التعبير عمّا تحتاجه وتشعر به،
+            بطريقتك وبإيقاعك.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#download"
+              ><span data-i18n="heroCta">ابدأ حكايتك مع جسر</span
+              ><svg class="icon"><use href="#i-download" /></svg></a
+            ><a class="text-link" href="#experience"
+              ><span data-i18n="explore">اكتشف الفكرة</span
+              ><span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <div class="hero-footnote">
+            <svg class="icon"><use href="#i-android" /></svg
+            ><span data-i18n="heroNote"
+              >لتطبيق Android · العربية، Français، English</span
+            >
+          </div>
+        </div>
+        <div
+          class="hero-stage"
+          aria-label="واجهة تطبيق جسر"
+          data-i18n-aria="stageLabel"
+        >
+          <canvas class="crystal-scene" aria-hidden="true"></canvas>
+          <div class="stage-grid" aria-hidden="true"></div>
+          <div class="bridge bridge-back" aria-hidden="true"></div>
+          <div class="bridge bridge-front" aria-hidden="true"></div>
+          <div class="orbit-label" aria-hidden="true">A LITTLE CLOSER.</div>
+          <div class="phone-wrap">
+            <div class="phone">
+              <img
+                id="hero-screen"
+                src="assets/screens/home-ar.png"
+                width="393"
+                height="852"
+                alt="شاشة جسر الرئيسية، مع الفئات وشريط التنقل الزجاجي"
+                data-i18n-alt="homeAlt"
+                fetchpriority="high"
+              />
+              <div class="phone-lip" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="floating-phrase glass">
+            <span class="glass-optics" aria-hidden="true"></span>
+            <span class="phrase-symbol"
+              ><svg class="icon"><use href="#i-water" /></svg
+            ></span>
+            <div>
+              <span class="micro" data-i18n="aPicture">صورة تقول</span
+              ><strong data-i18n="waterPhrase">أريد أن أشرب</strong>
+            </div>
+            <span class="sound-bars" aria-hidden="true"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></span>
+          </div>
+          <div class="floating-note glass">
+            <span class="glass-optics" aria-hidden="true"></span>
+            <svg class="icon"><use href="#i-heart" /></svg
+            ><span data-i18n="ownPace">على إيقاعك أنت.</span>
+          </div>
+          <span class="stage-caption" data-i18n="actualInterface"
+            >من واجهة التطبيق الفعلية</span
+          >
+        </div>
+        <div class="hero-bottom">
+          <span data-i18n="designedFor"
+            >صُمّم للتواصل. وللمساحة بين الكلمات.</span
+          ><span class="scroll-note"
+            ><span data-i18n="scroll">تابع الاكتشاف</span> ↓</span
+          >
+        </div>
+      </section>
+
+      <section
+        id="experience"
+        class="experience section wrap"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-intro reveal">
+          <p class="eyebrow" data-i18n="experienceEyebrow">
+            الفكرة أقرب مما تتخيل
+          </p>
+          <h2 id="experience-title">
+            <span data-i18n="experienceLine1">حين تصعب الكلمات،</span
+            ><br /><span class="soft-text" data-i18n="experienceLine2"
+              >تفتح الصورة حديثًا.</span
+            >
+          </h2>
+          <p data-i18n="experienceDescription">
+            حاجة بسيطة، شعور مهم، أو شخص نحبّه. اختر صورة ودع الصوت يحمل المعنى.
+            جرّب مثالًا هنا.
+          </p>
+        </div>
+        <div class="demo-composition reveal">
+          <div class="demo-board">
+            <div class="demo-topline">
+              <span data-i18n="demoLabel">مساحة للتجربة</span
+              ><span class="micro" data-i18n="demoHint">اختر صورة</span>
+            </div>
+            <div
+              class="demo-choices"
+              role="group"
+              aria-label="عبارات للتجربة"
+              data-i18n-aria="demoGroup"
+            >
+              <button
+                class="demo-choice selected"
+                data-phrase="water"
+                aria-pressed="true"
+              >
+                <span class="pictogram pictogram-water"
+                  ><svg><use href="#i-water" /></svg></span
+                ><span data-i18n="water">ماء</span>
+              </button>
+              <button
+                class="demo-choice"
+                data-phrase="happy"
+                aria-pressed="false"
+              >
+                <span class="pictogram pictogram-happy"
+                  ><svg><use href="#i-smile" /></svg></span
+                ><span data-i18n="happy">سعيد</span>
+              </button>
+              <button
+                class="demo-choice"
+                data-phrase="food"
+                aria-pressed="false"
+              >
+                <span class="pictogram pictogram-food"
+                  ><svg><use href="#i-food" /></svg></span
+                ><span data-i18n="food">طعام</span>
+              </button>
+            </div>
+            <div class="demo-output">
+              <span class="micro" data-i18n="myWords">كلماتي</span>
+              <p id="demo-phrase">أريد أن أشرب</p>
+              <button class="speak-button" id="speak">
+                <svg class="icon"><use href="#i-sound" /></svg
+                ><span data-i18n="listen">استمع إلى العبارة</span>
+              </button>
+              <p
+                class="speech-status micro"
+                id="speech-status"
+                role="status"
+                aria-live="polite"
+                data-i18n="speechHint"
+              >
+                الصوت حسب اللغات المثبتة في متصفحك.
+              </p>
+            </div>
+          </div>
+          <div class="demo-aside">
+            <span class="handwritten" aria-hidden="true">صورة، كلمة، وصلة.</span
+            ><svg class="drawn-arrow" viewBox="0 0 140 90" aria-hidden="true">
+              <path d="M130 8C90 1 98 75 25 65m15-17L24 65l20 9" />
+            </svg>
+            <p data-i18n="demoAside">
+              هذه تجربة توضيحية لفكرة التواصل بالصور. في التطبيق، تبقى صورك
+              المفضلة قريبة منك.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <div class="wrap manifesto-inner">
+          <p class="eyebrow reveal" data-i18n="manifestoEyebrow">
+            التفاصيل التي تُحدث فرقًا
+          </p>
+          <h2 id="manifesto-title" class="reveal">
+            <span data-i18n="manifestoLine1">ليس على الجميع</span><br /><span
+              data-i18n="manifestoLine2"
+              >أن يتواصلوا</span
+            >
+            <em data-i18n="manifestoLine3">بالطريقة نفسها.</em>
+          </h2>
+          <div class="manifesto-bottom">
+            <p data-i18n="manifestoDescription">
+              لذلك، يترك جسر مساحة لاختيار اللغة، وحجم الصور، ومستوى الحركة.
+              تجربة تتكيف معك، خطوة بخطوة.
+            </p>
+            <div
+              class="language-signature"
+              aria-label="العربية، الفرنسية، الإنجليزية"
+            >
+              <span lang="ar">أهلًا</span><span lang="fr">Bonjour.</span
+              ><span lang="en">Hello.</span>
+            </div>
+          </div>
+          <div class="manifesto-arch" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section
+        id="inside"
+        class="inside section wrap"
+        aria-labelledby="inside-title"
+      >
+        <div class="inside-heading reveal">
+          <div>
+            <p class="eyebrow" data-i18n="insideEyebrow">أقرب إلى جسر</p>
+            <h2 id="inside-title" data-i18n="insideTitle">
+              بسيط في يدك.<br />غنيّ بما يعنيه.
+            </h2>
+          </div>
+          <p data-i18n="insideDescription">
+            من أول صورة إلى الكلمات التي تستخدمها كل يوم. تعرّف على بعض المساحات
+            داخل التطبيق.
+          </p>
+        </div>
+        <div class="showcase reveal">
+          <div
+            class="showcase-menu"
+            role="tablist"
+            aria-label="واجهات التطبيق"
+            data-i18n-aria="screensLabel"
+            aria-orientation="vertical"
+          >
+            <button
+              class="showcase-tab"
+              id="tab-categories"
+              role="tab"
+              aria-selected="true"
+              aria-controls="screen-panel"
+              data-screen="gallery"
+              tabindex="0"
+            >
+              <span class="tab-number">01</span
+              ><span
+                ><strong data-i18n="categoriesTitle">عالم من الصور</strong
+                ><span data-i18n="categoriesBody"
+                  >الأطعمة، المشاعر، الاحتياجات والأشخاص. بداية واضحة لما تريد
+                  قوله.</span
+                ></span
+              ><svg class="icon"><use href="#i-arrow" /></svg>
+            </button>
+            <button
+              class="showcase-tab"
+              id="tab-voice"
+              role="tab"
+              aria-selected="false"
+              aria-controls="screen-panel"
+              data-screen="detail"
+              tabindex="-1"
+            >
+              <span class="tab-number">02</span
+              ><span
+                ><strong data-i18n="voiceTitle">صورة تحمل صوتك</strong
+                ><span data-i18n="voiceBody"
+                  >افتح الصورة واستمع إلى عبارتها، وأضفها إلى المفضلة لتجدها
+                  بسهولة.</span
+                ></span
+              ><svg class="icon"><use href="#i-arrow" /></svg>
+            </button>
+            <button
+              class="showcase-tab"
+              id="tab-calm"
+              role="tab"
+              aria-selected="false"
+              aria-controls="screen-panel"
+              data-screen="settings"
+              tabindex="-1"
+            >
+              <span class="tab-number">03</span
+              ><span
+                ><strong data-i18n="calmTitle">راحة تختارها أنت</strong
+                ><span data-i18n="calmBody"
+                  >لغة تناسبك، وصور أكبر، وحركة أقل. التفاصيل الصغيرة
+                  بيدك.</span
+                ></span
+              ><svg class="icon"><use href="#i-arrow" /></svg>
+            </button>
+          </div>
+          <div
+            class="screen-scene"
+            role="tabpanel"
+            id="screen-panel"
+            aria-labelledby="tab-categories"
+            tabindex="0"
+          >
+            <span class="screen-scene-label" data-i18n="realScreens"
+              >لقطات فعلية من JISR</span
+            >
+            <div class="screen-halo" aria-hidden="true"></div>
+            <div class="showcase-phone">
+              <img
+                id="showcase-screen"
+                src="assets/screens/gallery-ar.png"
+                width="393"
+                height="852"
+                alt="صور التواصل داخل تطبيق جسر"
+                loading="lazy"
+                data-i18n-alt="galleryAlt"
+              />
+            </div>
+            <span
+              class="scene-note"
+              id="scene-note"
+              data-i18n="categoriesCaption"
+              >مساحة للمعنى، صورة بصورة.</span
+            >
+          </div>
+        </div>
+        <div class="caregiver-note reveal">
+          <svg class="icon"><use href="#i-people" /></svg>
+          <h3 data-i18n="caregiverTitle">ومساحة لمن يساندك.</h3>
+          <p data-i18n="caregiverDescription">
+            يمكن للمرافق اختيار الصور ورفعها وإضافة العبارات يدويًا، لتقترب
+            تجربة التواصل من تفاصيل الحياة اليومية.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="download"
+        class="download-section section"
+        aria-labelledby="download-title"
+      >
+        <div class="wrap download-layout">
+          <div class="download-copy reveal">
+            <p class="eyebrow" data-i18n="downloadEyebrow">
+              الخطوة التالية، بين يديك
+            </p>
+            <h2 id="download-title">
+              <span data-i18n="downloadLine1">مسافة أقل.</span><br /><span
+                class="soft-text"
+                data-i18n="downloadLine2"
+                >تواصل أقرب.</span
+              >
+            </h2>
+            <p data-i18n="downloadDescription">
+              خذ جسر معك، وابدأ باكتشاف طريقك الخاص إلى التعبير.
+            </p>
+            <button
+              type="button" disabled
+              class="button primary download-button"
+              id="download-apk"
+              ><svg class="icon"><use href="#i-android" /></svg
+              ><span data-i18n="downloadButton">التحميل غير متاح حاليًا</span
+              ><svg class="icon"><use href="#i-download" /></svg
+            ></button>
+            <p class="download-meta">
+              <span data-i18n="beta">معاينة الموقع</span
+              ><span aria-hidden="true">·</span><span id="apk-meta" data-i18n="previewOnly">عرض فقط</span>
+            </p>
+            <p class="download-disclosure" data-i18n="betaDisclosure">
+              هذه عينة لعرض الموقع. تنزيل التطبيق معطّل حاليًا.
+            </p>
+            <p
+              class="download-feedback micro"
+              id="download-feedback"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
+          <div class="download-art" aria-hidden="true">
+            <div class="download-arch"></div>
+            <img
+              src="assets/jisr-icon.png"
+              width="180"
+              height="180"
+              alt=""
+              loading="lazy"
+            /><span lang="ar">جسر</span>
+            <p>A LITTLE CLOSER.</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="questions"
+        class="questions section wrap"
+        aria-labelledby="questions-title"
+      >
+        <div>
+          <p class="eyebrow" data-i18n="questionsEyebrow">قبل أن تبدأ</p>
+          <h2 id="questions-title" data-i18n="questionsTitle">قد تتساءل.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>
+              <span data-i18n="q1">لمن صُمّم جسر؟</span
+              ><svg class="icon"><use href="#i-plus" /></svg>
+            </summary>
+            <p data-i18n="a1">
+              جسر وسيلة لدعم التواصل بالصور والصوت، لمن يجدون صعوبة في التعبير
+              بالكلام، وللعائلات والمرافقين الذين يساندونهم. تختلف احتياجات كل
+              شخص؛ يمكنك استكشافه لمعرفة ما يناسبك.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <span data-i18n="q2">هل يمكن تنزيل التطبيق الآن؟</span
+              ><svg class="icon"><use href="#i-plus" /></svg>
+            </summary>
+            <p data-i18n="a2">لا. هذه نسخة عرض تقديمية للموقع، وتنزيل التطبيق معطّل حاليًا.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <span data-i18n="q3">هل يدعم العربية؟</span
+              ><svg class="icon"><use href="#i-plus" /></svg>
+            </summary>
+            <p data-i18n="a3">
+              نعم، تتوفر الواجهة بالعربية باتجاه من اليمين إلى اليسار، إضافة إلى
+              الفرنسية والإنجليزية. يعتمد نطق العبارات على توفر الصوت المناسب
+              على جهاز Android.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <span data-i18n="q4">هل يمكن استخدامه دون إنترنت؟</span
+              ><svg class="icon"><use href="#i-plus" /></svg>
+            </summary>
+            <p data-i18n="a4">
+              الصور المدمجة والمفضلة والإعدادات المحلية متاحة دون اتصال. النطق
+              المحلي يحتاج صوتًا مثبتًا على الجهاز. تسجيل الدخول ومساعد المرافق
+              والخدمات المتصلة تحتاج اتصالًا بالإنترنت.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <a class="brand" href="#" aria-label="JISR"
+        ><img src="assets/jisr-icon.png" width="40" height="40" alt="" /><span
+          >JISR<span class="brand-ar" lang="ar">جسر</span></span
+        ></a
+      >
+      <p data-i18n="footer">لكل شخص طريقته في التعبير.</p>
+      <button id="motion-toggle" class="motion-toggle" aria-pressed="false">
+        <svg class="icon"><use href="#i-motion" /></svg
+        ><span data-i18n="reduceMotion">تقليل الحركة</span></button
+      ><a class="back-top" href="#" data-i18n="backTop">إلى الأعلى ↑</a>
+    </footer>
+    <noscript
+      ><p class="wrap">
+        يمكنك تصفح الموقع وتحميل التطبيق دون JavaScript. تجربة الصوت وتبديل
+        اللغة تحتاجان JavaScript.
+      </p></noscript
+    >
+  </body>
+</html>

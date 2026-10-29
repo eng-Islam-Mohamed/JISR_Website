@@ -1,0 +1,13 @@
+node_modules/
+qa/*.png
+qa/*.webm
+qa/*.zip
+dist/
+*.zip
+downloads/
+.vercel/
+.env
+.env.*
+qa/**/node_modules/
+qa/**/*.png
+qa/**/*.webm

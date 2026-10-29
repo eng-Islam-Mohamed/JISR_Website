@@ -1,0 +1,464 @@
+/* Clear material, optical edges and the sculptural product stage. */
+body {
+  isolation: isolate;
+}
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: 75rem;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 6% 28%, var(--brand-sky), transparent 48%),
+    radial-gradient(ellipse at 52% 5%, var(--brand-lilac), transparent 45%),
+    linear-gradient(180deg, var(--color-clear), var(--brand-ivory) 92%);
+  opacity: 0.8;
+}
+.glass {
+  --light-x: 25%;
+  --light-y: 0%;
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at var(--light-x) var(--light-y),
+      var(--glass-highlight),
+      transparent 65%
+    ),
+    linear-gradient(145deg, var(--glass-tint), var(--glass-clear));
+  border: 0.075rem solid var(--glass-edge);
+  box-shadow:
+    inset 0.12rem 0.12rem 0.18rem var(--glass-highlight),
+    inset -0.12rem -0.15rem 0.2rem var(--glass-inner),
+    inset 0 0 1.25rem var(--glass-haze),
+    0 0.7rem 1.5rem var(--color-shadow),
+    0 0.08rem 0.15rem var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+}
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 0.18rem;
+  border-radius: inherit;
+  border: 0.04rem solid var(--glass-inner-rim);
+  pointer-events: none;
+}
+.glass-optics {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.glass-optics::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  transform: rotate(-28deg);
+  background: linear-gradient(
+    90deg,
+    transparent 35%,
+    var(--glass-highlight) 48%,
+    transparent 60%
+  );
+  opacity: 0.55;
+}
+.header {
+  position: relative;
+  padding-block: 0.65rem;
+  z-index: 12;
+}
+.header .brand {
+  padding: 0.3rem 0.6rem;
+  background: var(--glass-tint);
+  border-radius: var(--radius-small);
+}
+.main-nav {
+  padding: 0.45rem;
+  background-color: var(--glass-tint);
+  box-shadow:
+    inset 0.1rem 0.1rem 0.15rem var(--glass-highlight),
+    inset -0.1rem -0.1rem 0.15rem var(--glass-inner),
+    0 0.7rem 2rem var(--color-shadow);
+}
+.main-nav a {
+  position: relative;
+  z-index: 2;
+  padding-inline: 1.3rem;
+}
+.main-nav a:hover {
+  background: transparent;
+}
+.nav-lens {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0.45rem;
+  height: calc(100% - 0.9rem);
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+  background: linear-gradient(
+    145deg,
+    var(--glass-highlight),
+    var(--glass-clear)
+  );
+  border: 0.06rem solid var(--glass-edge);
+  box-shadow:
+    inset 0.1rem 0.1rem 0.15rem var(--glass-highlight),
+    inset -0.1rem -0.1rem 0.15rem var(--glass-inner),
+    0 0.15rem 0.4rem var(--color-shadow);
+}
+.nav-download {
+  background: linear-gradient(140deg, var(--color-ink), var(--color-deep));
+  box-shadow:
+    inset 0 0.1rem 0.12rem var(--glass-edge),
+    0 0.3rem 0.8rem var(--color-shadow);
+  border: 0.06rem solid var(--color-muted);
+}
+.nav-download {
+  background-color: var(--color-ink);
+}
+.hero {
+  padding-block-start: 2.5rem;
+}
+.hero-stage {
+  border-radius: 3rem;
+}
+.crystal-scene {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.hero-stage[data-renderer="webgl"] .bridge {
+  display: none;
+}
+.hero-stage[data-renderer="fallback"] .crystal-scene {
+  display: none;
+}
+.stage-grid {
+  opacity: 0.2;
+  z-index: -3;
+}
+.phone {
+  background: linear-gradient(
+    115deg,
+    var(--glass-highlight),
+    var(--brand-mist) 48%,
+    var(--brand-ivory) 49%,
+    var(--glass-highlight)
+  );
+  padding: 0.48rem;
+  outline: 0.05rem solid var(--glass-edge);
+  box-shadow:
+    inset 0.15rem 0.1rem 0.1rem var(--glass-highlight),
+    0.15rem 0.2rem 0.1rem var(--color-muted),
+    0.5rem 1.2rem 1.8rem var(--glass-shadow),
+    1.2rem 2rem 3.5rem var(--color-shadow);
+}
+.floating-phrase,
+.floating-note {
+  position: absolute;
+}
+.floating-phrase {
+  left: 0.8rem;
+  top: 12rem;
+  padding: 1rem;
+  gap: 0.8rem;
+  border-radius: 1.45rem;
+  background-color: var(--glass-tint);
+  transform: rotate(5deg);
+}
+.floating-phrase strong {
+  font-size: 0.9rem;
+}
+.floating-phrase .micro {
+  font-size: 0.65rem;
+}
+.phrase-symbol {
+  background: var(--glass-haze);
+  border: 0.05rem solid var(--glass-edge);
+  box-shadow: inset 0.1rem 0.1rem 0.2rem var(--glass-highlight);
+}
+.floating-note {
+  bottom: 5rem;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.75rem;
+  background-color: var(--glass-tint);
+}
+.hero .primary,
+.download-button,
+.speak-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-ink), var(--color-deep));
+  background-color: var(--color-ink);
+  border: 0.06rem solid var(--color-muted);
+  box-shadow:
+    inset 0 0.1rem 0.08rem var(--glass-edge),
+    inset 0 -0.15rem 0.35rem var(--glass-shadow),
+    0 0.45rem 0.8rem var(--color-shadow);
+}
+.hero .primary::before,
+.download-button::before,
+.speak-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at var(--light-x, 30%) 0%,
+    var(--glass-edge),
+    transparent 65%
+  );
+  opacity: 0.5;
+}
+.hero-footnote {
+  margin-block-start: 1.5rem;
+}
+.serif-word {
+  color: var(--color-ink);
+  position: relative;
+}
+.serif-word::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0.1em;
+  inset-inline: 0;
+  height: 0.18em;
+  border-radius: var(--radius-pill);
+  background: var(--brand-sky);
+}
+.hero-bottom {
+  margin-block-start: 1rem;
+}
+.experience {
+  position: relative;
+}
+.demo-composition {
+  position: relative;
+  padding: 1.2rem;
+  border-radius: 3rem;
+  background:
+    radial-gradient(ellipse at 0% 15%, var(--brand-sky), transparent 60%),
+    radial-gradient(ellipse at 100% 90%, var(--brand-lilac), transparent 70%);
+}
+.demo-board {
+  position: relative;
+  background: var(--glass-panel);
+  border: 0.08rem solid var(--glass-edge);
+  box-shadow:
+    inset 0.12rem 0.12rem 0.2rem var(--glass-highlight),
+    inset -0.12rem -0.12rem 0.25rem var(--glass-inner),
+    0 0.8rem 2rem var(--color-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: 2.25rem;
+}
+.demo-choice {
+  border-radius: 1.4rem;
+  background: var(--glass-panel);
+  box-shadow: inset 0 0.1rem 0.15rem var(--glass-highlight);
+  font-size: 0.8rem;
+}
+.demo-choice > span:last-child {
+  display: block;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.demo-choice[aria-pressed="true"] {
+  background: var(--brand-ivory);
+  border-color: var(--color-ink);
+  box-shadow:
+    inset 0.08rem 0.08rem 0.1rem var(--glass-highlight),
+    0 0.35rem 0.65rem var(--color-shadow);
+}
+.pictogram {
+  box-shadow:
+    inset 0.15rem 0.15rem 0.2rem var(--glass-highlight),
+    inset -0.15rem -0.15rem 0.25rem var(--color-shadow);
+}
+.demo-aside {
+  padding: 0.8rem 0.4rem 0;
+}
+.manifesto-inner::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  inset-inline-end: -8rem;
+  top: 3rem;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  border: 2rem solid var(--glass-inner-rim);
+  box-shadow:
+    inset 0.25rem 0.2rem 0.15rem var(--glass-highlight),
+    inset -0.5rem -0.2rem 0.8rem var(--glass-shadow),
+    0.1rem 0.2rem 0.2rem var(--glass-edge);
+  transform: rotate(-20deg) scaleX(0.6);
+  opacity: 0.5;
+}
+.screen-scene {
+  background:
+    radial-gradient(ellipse at 20% 30%, var(--brand-sky), transparent 75%),
+    radial-gradient(ellipse at 90% 80%, var(--brand-lilac), transparent 65%),
+    var(--color-paper);
+  border: 0.075rem solid var(--glass-edge);
+  box-shadow: inset 0.12rem 0.12rem 0.2rem var(--glass-highlight);
+  border-radius: 3rem;
+}
+.screen-halo {
+  inset: 22% -15%;
+  border: 1.2rem solid var(--glass-haze);
+  box-shadow:
+    inset 0.12rem 0.15rem 0.12rem var(--glass-highlight),
+    inset -0.18rem -0.2rem 0.2rem var(--glass-inner),
+    0.15rem 0.2rem 0.3rem var(--glass-shadow);
+}
+.screen-halo::after {
+  inset: -0.7rem;
+  border-color: var(--glass-edge);
+}
+.showcase-tab[aria-selected="true"] {
+  background: linear-gradient(120deg, var(--glass-panel), var(--brand-sky));
+  border: 0.06rem solid var(--glass-edge);
+  box-shadow:
+    inset 0.1rem 0.1rem 0.2rem var(--glass-highlight),
+    inset -0.1rem -0.1rem 0.15rem var(--glass-inner),
+    0 0.3rem 1rem var(--color-shadow);
+  border-radius: 1.6rem;
+}
+.showcase-tab {
+  border: 0.06rem solid transparent;
+}
+.download-art {
+  overflow: visible;
+}
+.download-arch {
+  border-color: var(--glass-clear);
+  background: none;
+  box-shadow:
+    inset 0.3rem 0.2rem 0.2rem var(--glass-highlight),
+    inset -0.3rem -0.2rem 0.4rem var(--glass-inner),
+    0.15rem 0.2rem 0.2rem var(--glass-edge),
+    0.5rem 1rem 2rem var(--color-shadow);
+}
+.language-menu {
+  position: absolute;
+  background-color: var(--glass-panel);
+}
+@supports (backdrop-filter: url("#liquid-refraction")) {
+  .floating-phrase,
+  .floating-note {
+    backdrop-filter: url("#liquid-refraction") blur(var(--glass-clear-blur))
+      saturate(1.25);
+  }
+}
+@media (min-width: 40rem) {
+  .floating-phrase {
+    top: 14rem;
+    left: 1.3rem;
+  }
+  .floating-note {
+    bottom: 8rem;
+    right: 1.2rem;
+  }
+}
+@media (min-width: 60rem) {
+  .header {
+    padding-block: 1rem;
+  }
+  .hero {
+    min-height: 49rem;
+    gap: 1rem;
+    grid-template-columns: 1fr 1.05fr;
+  }
+  .hero-copy {
+    padding-block-end: 2rem;
+  }
+  .hero-stage {
+    height: 43rem;
+  }
+  .phone-wrap {
+    top: 4rem;
+  }
+  .phone {
+    width: 15rem;
+  }
+  .floating-phrase {
+    top: 16rem;
+    left: 0.8rem;
+  }
+  .floating-note {
+    bottom: 8rem;
+    right: 1rem;
+  }
+  .demo-composition {
+    padding: 1.8rem;
+    margin-inline: 0;
+    transform: rotate(-2deg);
+  }
+  .demo-board {
+    transform: rotate(2deg);
+  }
+  .demo-aside {
+    transform: rotate(2deg);
+    margin-inline-start: 1rem;
+  }
+  .screen-scene {
+    min-height: 42rem;
+  }
+  .showcase-phone {
+    width: 14.2rem;
+    border-color: var(--glass-edge);
+    padding: 0.45rem;
+    box-shadow:
+      0.2rem 0.2rem 0.1rem var(--color-muted),
+      0.5rem 1rem 2rem var(--glass-shadow);
+  }
+}
+@media (min-width: 80rem) {
+  .hero {
+    gap: 2rem;
+    min-height: 52rem;
+  }
+  .hero-stage {
+    height: 46rem;
+  }
+  .phone {
+    width: 16.5rem;
+  }
+  .floating-phrase {
+    top: 18rem;
+    left: 0.8rem;
+  }
+  .floating-note {
+    bottom: 8.5rem;
+    right: 0.9rem;
+  }
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .glass,
+  .demo-board {
+    background: var(--brand-ivory);
+  }
+}
+html[data-motion="reduced"] .demo-composition,
+html[data-motion="reduced"] .demo-board,
+html[data-motion="reduced"] .demo-aside {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .demo-composition,
+  .demo-board,
+  .demo-aside {
+    transform: none;
+  }
+}

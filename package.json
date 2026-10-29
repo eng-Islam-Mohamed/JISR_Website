@@ -1,0 +1,21 @@
+{
+  "name": "jisr-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JISR cinematic website; static deployment with bundled GSAP and Canvas companion.",
+  "scripts": {
+    "dev": "npm run compile && node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "build": "npm run compile && node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "compile": "tsc --noEmit && esbuild src/cinematic.ts --bundle --minify --outfile=cinematic.js --target=es2022"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "gsap": "^3.15.0",
+    "typescript": "^7.0.2"
+  }
+}

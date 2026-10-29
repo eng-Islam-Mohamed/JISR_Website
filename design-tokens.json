@@ -1,0 +1,236 @@
+{
+  "brand": {
+    "sky": {
+      "$type": "color",
+      "$value": "#C7DDE8"
+    },
+    "sage": {
+      "$type": "color",
+      "$value": "#C5D3BE"
+    },
+    "ivory": {
+      "$type": "color",
+      "$value": "#FAF7F0"
+    },
+    "lilac": {
+      "$type": "color",
+      "$value": "#E4DDF3"
+    },
+    "mist": {
+      "$type": "color",
+      "$value": "#B0C4DE"
+    }
+  },
+  "color": {
+    "ink": {
+      "$type": "color",
+      "$value": "#24344A"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "#526174"
+    },
+    "deep": {
+      "$type": "color",
+      "$value": "#17253D"
+    },
+    "line": {
+      "$type": "color",
+      "$value": "#D8DCD9"
+    },
+    "paper": {
+      "$type": "color",
+      "$value": "#F3F1EA"
+    },
+    "glass": {
+      "$type": "color",
+      "$value": "rgba(250,247,240,0.70)"
+    },
+    "rim": {
+      "$type": "color",
+      "$value": "rgba(250,247,240,0.95)"
+    },
+    "shadow": {
+      "$type": "color",
+      "$value": "rgba(36,52,74,0.14)"
+    },
+    "clear": {
+      "$type": "color",
+      "$value": "rgba(36,52,74,0)"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "#A9344C"
+    }
+  },
+  "motion": {
+    "fast": {
+      "$type": "duration",
+      "$value": "160ms"
+    },
+    "base": {
+      "$type": "duration",
+      "$value": "260ms"
+    },
+    "reveal": {
+      "$type": "duration",
+      "$value": "480ms"
+    },
+    "ease": {
+      "$type": "cubicBezier",
+      "$value": [0.2, 0.75, 0.2, 1]
+    }
+  },
+  "space": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "0.5rem"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "1rem"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "1.5rem"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "2rem"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "3rem"
+    },
+    "section": {
+      "$type": "dimension",
+      "$value": "7rem"
+    }
+  },
+  "radius": {
+    "card": {
+      "$type": "dimension",
+      "$value": "2rem"
+    },
+    "small": {
+      "$type": "dimension",
+      "$value": "1rem"
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": "99rem"
+    }
+  },
+  "font": {
+    "latin": {
+      "$type": "fontFamily",
+      "$value": "Manrope, Plex, sans-serif"
+    },
+    "arabic": {
+      "$type": "fontFamily",
+      "$value": "Plex, Manrope, sans-serif"
+    },
+    "label": {
+      "$type": "fontFamily",
+      "$value": "Manrope, sans-serif"
+    },
+    "arabicLabel": {
+      "$type": "fontFamily",
+      "$value": "Plex, sans-serif"
+    },
+    "editorial": {
+      "$type": "fontFamily",
+      "$value": "Georgia, serif"
+    }
+  },
+  "material": {
+    "blur": {
+      "$type": "dimension",
+      "$value": "1.125rem"
+    },
+    "refraction": {
+      "$type": "dimension",
+      "$value": "0.1875rem"
+    }
+  },
+  "glass": {
+    "highlight": {
+      "$type": "color",
+      "$value": "rgba(255,255,255,0.95)"
+    },
+    "tint": {
+      "$type": "color",
+      "$value": "rgba(250,247,240,0.24)"
+    },
+    "clear": {
+      "$type": "color",
+      "$value": "rgba(199,221,232,0.12)"
+    },
+    "edge": {
+      "$type": "color",
+      "$value": "rgba(255,255,255,0.72)"
+    },
+    "inner": {
+      "$type": "color",
+      "$value": "rgba(82,97,116,0.22)"
+    },
+    "inner-rim": {
+      "$type": "color",
+      "$value": "rgba(255,255,255,0.38)"
+    },
+    "haze": {
+      "$type": "color",
+      "$value": "rgba(199,221,232,0.30)"
+    },
+    "shadow": {
+      "$type": "color",
+      "$value": "rgba(36,52,74,0.24)"
+    },
+    "panel": {
+      "$type": "color",
+      "$value": "rgba(250,247,240,0.66)"
+    },
+    "blur": {
+      "$type": "dimension",
+      "$value": "0.5rem"
+    },
+    "clear-blur": {
+      "$type": "dimension",
+      "$value": "0.125rem"
+    }
+  },
+  "cinema": {
+    "shade": {
+      "$type": "color",
+      "$value": "rgba(23,37,61,0.55)"
+    },
+    "shadow": {
+      "$type": "color",
+      "$value": "rgba(23,37,61,0.70)"
+    },
+    "card-width": {
+      "$type": "dimension",
+      "$value": "652px"
+    },
+    "card-height": {
+      "$type": "dimension",
+      "$value": "1024px"
+    },
+    "blur-nav": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "blur-text": {
+      "$type": "dimension",
+      "$value": "10px"
+    },
+    "blur-word": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "blur-arrival": {
+      "$type": "dimension",
+      "$value": "16px"
+    }
+  }
+}
