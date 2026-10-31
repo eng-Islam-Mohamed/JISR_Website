@@ -320,6 +320,7 @@ function moveLens(link: HTMLElement, instant = false) {
     target = link.getBoundingClientRect();
   if (!bounds.width) return;
   nav.dataset.lens = "ready";
+  navLinks.forEach((a) => a.toggleAttribute("data-lensed", a === link));
   springLens(target.left - bounds.left, target.width, instant);
 }
 navLinks.forEach((link) => {

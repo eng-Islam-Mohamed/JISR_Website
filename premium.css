@@ -94,6 +94,11 @@ html[dir="rtl"] .scroll-progress span {
 .main-nav a {
   transition: color var(--motion-base);
 }
+/* the lens is bright, so the link above it needs ink even over the photo */
+.cinematic .header .main-nav a[data-lensed] {
+  color: var(--color-ink);
+  text-shadow: none;
+}
 
 /* ---------- split words ---------- */
 .sw {
