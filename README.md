@@ -21,6 +21,8 @@ Publish `dist/`. Vercel uses the included `vercel.json`. Node.js 20 or newer is 
 
 The approved JISR blue/sage/ivory/lavender background is `assets/portal/jisr-dawn.png`. See `SOURCES.md` for design provenance. Fonts and their OFL notices are bundled locally. No third-party network services are required by the running website.
 
+Premium layer: `src/premium/` (Lenis smooth scroll, scroll scenes, pointer effects, liquid glass refraction) and `premium.css`. Lenis is vendored in `src/vendor/`.
+
 Sources: `src/cinematic.ts`, `src/quad.ts`, `src/ghost/`, `app.js`; styling: `styles.css`, `glass.css`, `cinematic.css`; shared tokens: `design-tokens.json`. The generated `tokens.css` and `cinematic.js` are included for static previews.
 
 `qa/preview-check.cjs` verifies the approved image hash, localized layouts, disabled download controls and absence of public installer URLs using Playwright. Set `JISR_SITE_URL` to the preview or production URL. QA can use an externally provided Playwright installation via `QA_NODE_MODULES`.

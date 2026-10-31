@@ -44,7 +44,7 @@ export function mountCompanion(
     lastScan = now;
     obstacles = [
       ...document.querySelectorAll<HTMLElement>(
-        "h1 .cinema-word,h2 .cinema-word,.cinema-lead,.ready-lead,.cinema-actions,.cinema-ready>.ink,.header,.button,.speak-button,.section-intro h2,.inside-heading h2",
+        "h1 .cinema-word,h2 .cinema-word,.cinema-lead,.ready-lead,.cinema-actions,.cinema-ready>.ink,.header,.button,.speak-button,main h2,.step-copy h3,.showcase-tab,.tile-copy,.demo-board,.faq-list summary,.download-copy",
       ),
     ]
       .filter(

@@ -9,6 +9,8 @@ import {
   type Quad,
 } from "./quad";
 import { mountCompanion } from "./ghost/companion";
+import { mountPremium } from "./premium";
+import { jellyLens } from "./premium/glass";
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
 
@@ -300,40 +302,6 @@ function motion() {
       repeat: -1,
       ease: "sine.inOut",
     });
-    document
-      .querySelectorAll<HTMLElement>(".section-intro h2,.inside-heading h2")
-      .forEach((el) => {
-        gsap.fromTo(
-          el,
-          { opacity: 0.35, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 92%",
-              end: "top 58%",
-              scrub: true,
-            },
-          },
-        );
-      });
-    gsap.fromTo(
-      ".showcase-phone",
-      { rotation: -8, y: 35 },
-      {
-        rotation: 5,
-        y: -15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".showcase",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.8,
-        },
-      },
-    );
   });
   cleanupEffects = () => media.revert();
 }
@@ -346,17 +314,13 @@ const nav = header.querySelector<HTMLElement>(".main-nav")!,
   lens = nav.querySelector<HTMLElement>(".nav-lens")!;
 const navLinks = [...nav.querySelectorAll<HTMLAnchorElement>("a")];
 let current = navLinks[0];
+const springLens = jellyLens(lens);
 function moveLens(link: HTMLElement, instant = false) {
   const bounds = nav.getBoundingClientRect(),
     target = link.getBoundingClientRect();
   if (!bounds.width) return;
   nav.dataset.lens = "ready";
-  gsap.to(lens, {
-    x: target.left - bounds.left,
-    width: target.width,
-    duration: instant || reduced() ? 0 : 0.4,
-    ease: "power3.out",
-  });
+  springLens(target.left - bounds.left, target.width, instant);
 }
 navLinks.forEach((link) => {
   link.addEventListener("pointerenter", () => moveLens(link));
@@ -541,3 +505,4 @@ addEventListener(
   },
   { once: true },
 );
+mountPremium();

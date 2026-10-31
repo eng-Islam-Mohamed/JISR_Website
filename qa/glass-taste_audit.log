@@ -1,0 +1,5 @@
+
+website/index.html:
+  MED  3 equal-size blocks "DIV>BUTTON.demo-choice" — fine for a dashboard metric row, but on a marketing/feature section break symmetry (one hero item / bento sizing).
+
+(taste is heuristic — a strong signal, not proof. Pair with human visual review.)

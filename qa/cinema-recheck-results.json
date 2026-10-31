@@ -1,0 +1,226 @@
+[
+  {
+    "width": 1280,
+    "lang": "ar",
+    "target": 0.44,
+    "progress": "0.440",
+    "ready": "0",
+    "old": "1",
+    "hidden": "true"
+  },
+  {
+    "width": 1280,
+    "lang": "ar",
+    "target": 0.45,
+    "progress": "0.450",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "ar",
+    "target": 0.533,
+    "progress": "0.533",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "ar",
+    "target": 0.6,
+    "progress": "0.600",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "fr",
+    "target": 0.44,
+    "progress": "0.440",
+    "ready": "0",
+    "old": "1",
+    "hidden": "true"
+  },
+  {
+    "width": 1280,
+    "lang": "fr",
+    "target": 0.45,
+    "progress": "0.450",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "fr",
+    "target": 0.533,
+    "progress": "0.533",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "fr",
+    "target": 0.6,
+    "progress": "0.600",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "en",
+    "target": 0.44,
+    "progress": "0.440",
+    "ready": "0",
+    "old": "1",
+    "hidden": "true"
+  },
+  {
+    "width": 1280,
+    "lang": "en",
+    "target": 0.45,
+    "progress": "0.450",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "en",
+    "target": 0.533,
+    "progress": "0.533",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 1280,
+    "lang": "en",
+    "target": 0.6,
+    "progress": "0.600",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "ar",
+    "target": 0.44,
+    "progress": "0.440",
+    "ready": "0",
+    "old": "1",
+    "hidden": "true"
+  },
+  {
+    "width": 390,
+    "lang": "ar",
+    "target": 0.45,
+    "progress": "0.450",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "ar",
+    "target": 0.533,
+    "progress": "0.533",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "ar",
+    "target": 0.6,
+    "progress": "0.600",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "fr",
+    "target": 0.44,
+    "progress": "0.440",
+    "ready": "0",
+    "old": "1",
+    "hidden": "true"
+  },
+  {
+    "width": 390,
+    "lang": "fr",
+    "target": 0.45,
+    "progress": "0.450",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "fr",
+    "target": 0.533,
+    "progress": "0.533",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "fr",
+    "target": 0.6,
+    "progress": "0.600",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "target": 0.44,
+    "progress": "0.440",
+    "ready": "0",
+    "old": "1",
+    "hidden": "true"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "target": 0.45,
+    "progress": "0.450",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "target": 0.533,
+    "progress": "0.533",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "target": 0.6,
+    "progress": "0.600",
+    "ready": "1",
+    "old": "0",
+    "hidden": "false"
+  },
+  {
+    "companionOpacity": "0.25",
+    "companionPointerEvents": "none",
+    "rightOfDownload": "download-apk"
+  },
+  {
+    "rightSideDownload": "JISR-Android.apk"
+  }
+]

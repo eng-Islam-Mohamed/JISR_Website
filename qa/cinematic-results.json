@@ -1,0 +1,28 @@
+{
+  "responsive": [
+    "ar/280",
+    "ar/320",
+    "ar/390",
+    "ar/768",
+    "ar/1280",
+    "ar/1440",
+    "fr/280",
+    "fr/320",
+    "fr/390",
+    "fr/768",
+    "fr/1280",
+    "fr/1440",
+    "en/280",
+    "en/320",
+    "en/390",
+    "en/768",
+    "en/1280",
+    "en/1440"
+  ],
+  "portal": "Projection grows and reveals accessible second screen",
+  "ghost": "Keyboard press, expression, show/hide verified",
+  "download": "Real bytes and SHA-256 match",
+  "axe": "No violations in tested Arabic lower-page state",
+  "fallbacks": "No-JS content and failed-photo intro recovery work",
+  "errors": []
+}

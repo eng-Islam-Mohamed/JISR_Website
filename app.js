@@ -1,5 +1,27 @@
 const translations = {
   ar: {
+    howEyebrow: "ثلاث خطوات هادئة",
+    howTitle: "من صورة إلى صوت.",
+    howDescription: "لا قوائم تحتاج إلى حفظ. صورة، ثم عبارة، ثم صوت.",
+    step1Title: "اختر صورة",
+    step1Body: "تصفّح فئات واضحة: الأطعمة، المشاعر، الاحتياجات والأشخاص. لمسة واحدة تكفي.",
+    step2Title: "استمع إليها مسموعة",
+    step2Body: "كل صورة تحمل عبارة، ويقرؤها جسر بصوت جهازك.",
+    step3Title: "احتفظ بها قريبة",
+    step3Body: "أضف الكلمات التي تستخدمها كثيرًا إلى المفضلة لتجدها في لحظة.",
+    stepPhrase: "أنا سعيد",
+    adaptEyebrow: "مصمّم ليتكيّف معك",
+    adaptTitle: "الراحة في التفاصيل.",
+    langTitle: "ثلاث لغات في مكان واحد",
+    langBody: "العربية من اليمين إلى اليسار، والفرنسية والإنجليزية. بدّل متى شئت.",
+    calmTileTitle: "حركة أقل عند الطلب",
+    calmTileBody: "هدّئ الشاشة بلمسة واحدة. جرّب: هذا الزر يهدّئ هذا الموقع أيضًا.",
+    calmOff: "الحركة مفعّلة",
+    calmOn: "الحركة مخفّضة",
+    sizeTitle: "صور بالحجم الذي يناسبك",
+    sizeBody: "كبّر الصور لتراها وتلمسها بسهولة.",
+    offlineTitle: "قريب منك حتى دون اتصال",
+    offlineBody: "الصور المدمجة والمفضلة والإعدادات متاحة دون اتصال.",
     title: "JISR · لكل تعبير، جسر",
     skip: "انتقل إلى المحتوى",
     navLabel: "التنقل الرئيسي",
@@ -102,6 +124,28 @@ const translations = {
     phrases: { water: "أريد أن أشرب", happy: "أنا سعيد", food: "أريد أن آكل" },
   },
   fr: {
+    howEyebrow: "Trois étapes, en douceur",
+    howTitle: "De l’image à la voix.",
+    howDescription: "Aucun menu à mémoriser. Une image, une phrase, une voix, dans cet ordre.",
+    step1Title: "Choisir une image",
+    step1Body: "Parcourez des catégories claires : aliments, émotions, besoins et personnes. Un geste suffit.",
+    step2Title: "L’entendre à voix haute",
+    step2Body: "Chaque image porte une phrase. JISR la lit avec la voix de votre appareil.",
+    step3Title: "La garder à portée",
+    step3Body: "Ajoutez les mots que vous utilisez le plus aux favoris pour les retrouver en un instant.",
+    stepPhrase: "Je suis heureux",
+    adaptEyebrow: "Pensé pour s’adapter",
+    adaptTitle: "Le confort est dans les détails.",
+    langTitle: "Trois langues, un seul lieu",
+    langBody: "L’arabe de droite à gauche, le français et l’anglais. Changez quand vous voulez.",
+    calmTileTitle: "Moins d’animations, sur demande",
+    calmTileBody: "Apaisez l’écran d’un geste. Essayez : cet interrupteur apaise aussi ce site.",
+    calmOff: "Animations activées",
+    calmOn: "Animations réduites",
+    sizeTitle: "Des images à votre taille",
+    sizeBody: "Agrandissez les images pour mieux les voir et les toucher.",
+    offlineTitle: "À portée, même hors ligne",
+    offlineBody: "Les images intégrées, les favoris et les réglages restent disponibles sans connexion.",
     title: "JISR · Un pont pour chaque expression",
     skip: "Aller au contenu",
     navLabel: "Navigation principale",
@@ -210,6 +254,28 @@ const translations = {
     },
   },
   en: {
+    howEyebrow: "Three gentle steps",
+    howTitle: "From a picture to a voice.",
+    howDescription: "No menus to memorise. A picture, a phrase and a voice, in that order.",
+    step1Title: "Choose a picture",
+    step1Body: "Browse clear categories: food, feelings, needs and people. One tap is enough.",
+    step2Title: "Hear it spoken",
+    step2Body: "Each picture carries a phrase. JISR reads it aloud with your device’s voice.",
+    step3Title: "Keep it close",
+    step3Body: "Save the words you use most to favourites and find them again in a moment.",
+    stepPhrase: "I am happy",
+    adaptEyebrow: "Made to adapt",
+    adaptTitle: "Comfort is in the details.",
+    langTitle: "Three languages, one home",
+    langBody: "Arabic from right to left, French and English. Switch whenever you like.",
+    calmTileTitle: "Less motion, on request",
+    calmTileBody: "Calm the screen in one tap. Try it: this switch calms this website too.",
+    calmOff: "Motion on",
+    calmOn: "Motion reduced",
+    sizeTitle: "Pictures your size",
+    sizeBody: "Make pictures larger so they are easier to see and tap.",
+    offlineTitle: "Close at hand, offline",
+    offlineBody: "Built-in pictures, favourites and settings are there without a connection.",
     title: "JISR · A bridge for every expression",
     skip: "Skip to content",
     navLabel: "Main navigation",
@@ -568,17 +634,27 @@ function updateMotionLabel() {
   $("#motion-toggle span").textContent = t(
     motionReduced() ? "restoreMotion" : "reduceMotion",
   );
+  const calm = $(".calm-switch");
+  if (calm) {
+    calm.setAttribute("aria-checked", String(motionReduced()));
+    calm.querySelector(".calm-state").textContent = t(
+      motionReduced() ? "calmOn" : "calmOff",
+    );
+    calm.disabled = systemMotion.matches;
+  }
 }
 function setMotion(reduced) {
   root.dataset.motion = reduced ? "reduced" : "full";
   root.classList.toggle("js-motion", !motionReduced());
   updateMotionLabel();
 }
-$("#motion-toggle").addEventListener("click", () => {
+function toggleMotion() {
   const next = root.dataset.motion !== "reduced";
   setMotion(next);
   store.set("jisr-site-motion", next ? "reduced" : "full");
-});
+}
+$("#motion-toggle").addEventListener("click", toggleMotion);
+$(".calm-switch")?.addEventListener("click", toggleMotion);
 systemMotion.addEventListener("change", () =>
   setMotion(root.dataset.motion === "reduced"),
 );

@@ -16,6 +16,7 @@ for (const file of [
   "app.js",
   "cinematic.js",
   "cinematic.css",
+  "premium.css",
   "assets/portal/jisr-dawn.png",
   "styles.css",
   "glass.css",

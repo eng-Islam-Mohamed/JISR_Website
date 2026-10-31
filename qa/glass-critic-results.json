@@ -1,0 +1,97 @@
+{
+  "screens": [
+    {
+      "name": "glass-critic-1280-light-ar.png",
+      "scroll": 1280,
+      "width": 1280,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-390-light-ar.png",
+      "scroll": 390,
+      "width": 390,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-1280-light-en.png",
+      "scroll": 1280,
+      "width": 1280,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-390-light-en.png",
+      "scroll": 390,
+      "width": 390,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-1280-light-fr.png",
+      "scroll": 1280,
+      "width": 1280,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-390-light-fr.png",
+      "scroll": 390,
+      "width": 390,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-1280-dark-ar.png",
+      "scroll": 1280,
+      "width": 1280,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-390-dark-ar.png",
+      "scroll": 390,
+      "width": 390,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-1280-dark-en.png",
+      "scroll": 1280,
+      "width": 1280,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-390-dark-en.png",
+      "scroll": 390,
+      "width": 390,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-1280-dark-fr.png",
+      "scroll": 1280,
+      "width": 1280,
+      "renderer": "webgl",
+      "canvas": "true"
+    },
+    {
+      "name": "glass-critic-390-dark-fr.png",
+      "scroll": 390,
+      "width": 390,
+      "renderer": "webgl",
+      "canvas": "true"
+    }
+  ],
+  "interactions": [
+    "WebGL pointer response changes actual rendered pixels",
+    "Nav lens moves to hovered control and navigation click reaches Questions",
+    "Pictogram controls update phrase and selection",
+    "All nine showcase locale/tab combinations load matching screenshot",
+    "Every FAQ disclosure opens and closes",
+    "Reduced motion freezes rendered sculpture response"
+  ],
+  "errors": []
+}

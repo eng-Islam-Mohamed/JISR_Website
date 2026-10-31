@@ -14,3 +14,17 @@ The user approved the generated blue/sage/ivory/lavender adaptation on 29 Octobe
 
 
 The user replaced the hero on 29 October 2026 with their supplied communication/tablet illustration, stored byte-for-byte as `assets/portal/jisr-connection.png`. The original central glass panel and JISR logo overlay remain visible over the supplied artwork, and the camera transition originates from this panel. Earlier backgrounds remain historical assets.
+
+## Premium front-end layer (31 October 2026)
+
+Added `premium.css` and `src/premium/` (smooth scrolling, scroll scenes, pointer effects, liquid glass). Everything is written for this static site in vanilla TypeScript + GSAP. No React component code was copied.
+
+- **liquid_glass_widgets** ([github.com/sdegenaar/liquid_glass_widgets](https://github.com/sdegenaar/liquid_glass_widgets), MIT): the refraction model (rounded-rect SDF bezel, Snell refraction, RGB dispersion) and the underdamped "jelly" spring (damping ratio 0.73) were ported from its shaders and morph-engine docs into `src/premium/glass.ts`. Its rules (glass only on the navigation/control layer, never glass inside glass) decide where glass is used.
+- **UX/UI Agent Skills** ([github.com/plugin87/ux-ui-agent-skills](https://github.com/plugin87/ux-ui-agent-skills), MIT): redesign workflow, motion choreography, cognitive-accessibility rules, the variance mandate for section layouts, and the no-emoji rule.
+- **Skiper UI** ([skiper-ui.com](https://skiper-ui.com)): the sticky card stack ("Card stack scroll") and scroll text reveal patterns inspired "How it works" and the manifesto word fill. Attribution to Skiper UI is required by its free licence and is given here.
+- **Vengeance UI** ([github.com/Ashutoshx7/VengenceUI](https://github.com/Ashutoshx7/VengenceUI), MIT): the glow-border card, magnetic spotlight marquee, expandable bento grid, stagger text and FAQ accordion inspired the spotlight tiles, scroll marquee, bento, heading reveals and accordion.
+- **AnimMaster**: public gallery previews (scroll, mouse, text) informed the effect choices. The paid source was not accessed.
+- **uberdesigner.ai**: the existing Portale hero (see above) is kept.
+- **Lenis 1.3.27** (darkroom.engineering, MIT): vendored as a pre-bundled module in `src/vendor/lenis.mjs` with its licence header, so no new npm dependency is needed.
+
+Design rule: motion follows the user. The marquee, word fills and card stack move only while you scroll. Nothing flashes. "Reduce motion" (footer, or the switch in the "Comfort" tile) and the OS setting turn off smooth scrolling, the cursor ring and every scene, and show all content statically.

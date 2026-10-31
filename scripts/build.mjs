@@ -21,6 +21,7 @@ for (const file of [
   "app.js",
   "cinematic.js",
   "cinematic.css",
+  "premium.css",
   "SOURCES.md",
   "assets",
   "_headers",

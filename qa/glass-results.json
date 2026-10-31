@@ -1,0 +1,10 @@
+{
+  "renderer": "WebGL compiled and rendered",
+  "pointer": "Actual shader uniforms respond",
+  "lens": "Moves between navigation links",
+  "reducedMotion": "Shader motion stops",
+  "contextLoss": "Fallback appears, restored context renders again",
+  "phoneResolution": "Back buffer capped",
+  "withoutWebGL": "App image, CSS glass, download remain available",
+  "errors": []
+}

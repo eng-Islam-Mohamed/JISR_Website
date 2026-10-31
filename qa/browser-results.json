@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "ar/280: no horizontal overflow or clipped text",
+    "ar/320: no horizontal overflow or clipped text",
+    "ar/390: no horizontal overflow or clipped text",
+    "ar/768: no horizontal overflow or clipped text",
+    "ar/1280: no horizontal overflow or clipped text",
+    "ar/1440: no horizontal overflow or clipped text",
+    "fr/280: no horizontal overflow or clipped text",
+    "fr/320: no horizontal overflow or clipped text",
+    "fr/390: no horizontal overflow or clipped text",
+    "fr/768: no horizontal overflow or clipped text",
+    "fr/1280: no horizontal overflow or clipped text",
+    "fr/1440: no horizontal overflow or clipped text",
+    "en/280: no horizontal overflow or clipped text",
+    "en/320: no horizontal overflow or clipped text",
+    "en/390: no horizontal overflow or clipped text",
+    "en/768: no horizontal overflow or clipped text",
+    "en/1280: no horizontal overflow or clipped text",
+    "en/1440: no horizontal overflow or clipped text",
+    "Real browser APK download: bytes and SHA-256 match release manifest",
+    "axe: zero WCAG A/AA violations in rendered Arabic mobile page",
+    "Pictogram selection, speech error state, tab click/keyboard, FAQ, language, motion persistence, no-JS content: passed"
+  ],
+  "errors": [],
+  "failed": [],
+  "axe": true
+}
